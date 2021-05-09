@@ -1,9 +1,9 @@
 # Bucket to store website on GCP
 resource "google_storage_bucket" "website" {
   provider = google
-#  name     = "p-57068-albert-website"
-  name     = var.gcs_bucket
-  location = "US"
+  #  name     = "p-57068-albert-website"
+  name          = var.gcs_bucket
+  location      = "US"
   force_destroy = true
 }
 
@@ -17,6 +17,6 @@ resource "google_storage_default_object_access_control" "website_read" {
 resource "google_storage_bucket_object" "hello" {
   name   = "hello.html"
   source = "web_static/hello.html"
-#  bucket = "website"
-  bucket  =var.gcs_bucket
+  #  bucket = "website"
+  bucket = var.gcs_bucket
 }
