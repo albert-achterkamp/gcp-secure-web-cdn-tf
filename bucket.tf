@@ -1,4 +1,4 @@
-# Bucket to store website
+# Bucket to store website on GCP
 resource "google_storage_bucket" "website" {
   provider = google
 #  name     = "p-57068-albert-website"
