@@ -16,7 +16,7 @@ resource "google_storage_default_object_access_control" "website_read" {
 
 resource "google_storage_bucket_object" "hello" {
   name   = "hello.html"
-  source = "~/web_static/hello.html"
+  source = "hello.html"
   #  bucket = "website"
   bucket = var.gcs_bucket
 }
