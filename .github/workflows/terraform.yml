@@ -70,10 +70,10 @@ jobs:
 ##        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
         run: terraform apply -auto-approve
 
-### UnComment below if Infrastructure should be destroyed
+### UnComment below if Infrastructure should be destroyed , only runs when code is merged into master branch
 
-##      - name: Terraform Destroy
-##        id: destr
+      - name: Terraform Destroy
+        id: destr
 ##        if: github.event_name == 'pull_request'
-####        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-##        run: terraform destroy -auto-approve 
+        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+        run: terraform destroy -auto-approve 
